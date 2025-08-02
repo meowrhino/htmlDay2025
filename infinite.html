@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>La Página Infinita</title>
+  <!-- Recarga cada 60 segundos para reforzar el loop -->
+  <meta http-equiv="refresh" content="60">
+</head>
+<body>
+  <h1>🌀 La Página Infinita</h1>
+  <p>Bienvenido. La página se mueve, se refleja y vuelve a empezar. Si te pierdes, vuelve arriba: <a href="#top">Ir al principio</a></p>
+  <a name="top"></a>
+
+  <!-- Texto "parpadeante" nostálgico (muchos navegadores ya no soportan <blink>, pero se mantiene por espíritu) -->
+  <p>
+    <blink>¡Bienvenido al caos eterno del HTML!</blink>
+  </p>
+
+  <!-- Marquees en distintas direcciones y comportamientos -->
+  <marquee behavior="alternate" scrollamount="12" style="font-size:1.3em;">
+    ↔↔↔ Bienvenido a la espiral eterna ↔↔↔
+  </marquee>
+
+  <marquee direction="left" scrollamount="5" loop="0">
+    ←←← Texto que nunca para: HTML es vida, HTML es ruido, HTML es nostalgia ←←←
+  </marquee>
+
+  <marquee direction="right" scrollamount="3" loop="0">
+    →→→ Sigue el flujo. No hay escape. →→→
+  </marquee>
+
+  <marquee behavior="scroll" direction="up" height="120" scrollamount="2" loop="0">
+    <p>Sube... sube... sube... sube... sube...</p>
+    <p>Sube... sube... sube... sube... sube...</p>
+    <p>Sube... sube... sube... sube... sube...</p>
+  </marquee>
+
+  <marquee behavior="scroll" direction="down" height="120" scrollamount="2" loop="0">
+    <p>Baja... baja... baja... baja... baja...</p>
+    <p>Baja... baja... baja... baja... baja...</p>
+    <p>Baja... baja... baja... baja... baja...</p>
+  </marquee>
+
+  <p>Si necesitas más caos:</p>
+  <ul>
+    <li><a href="#top">Reiniciar vista</a></li>
+    <li><a href="infinite.html">Volver a cargar (mezcla de todo)</a></li>
+  </ul>
+
+  <p><small>Hecho con puro HTML, sin CSS ni JS. Etiquetas vintage como <code>&lt;marquee&gt;</code> y <code>&lt;blink&gt;</code> para invocar los 2000.</small></p>
+</body>
+</html>

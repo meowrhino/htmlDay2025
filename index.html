@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Day 2025: Aprende Vim - Nivel Básico</title>
+  <style>
+    /* Reset y tipografía mínima */
+    body { margin:0; padding:1rem; font-family: sans-serif; line-height:1.6; }
+    header, section { max-width:800px; margin:auto; padding:1rem; }
+    pre { background:#f5f5f5; padding:0.5rem; overflow-x:auto; }
+    nav a { margin-right:1rem; text-decoration:none; color:#333; }
+    table { width:100%; border-collapse:collapse; margin:1rem 0; }
+    th, td { border:1px solid #ddd; padding:0.5rem; text-align:left; }
+    details { margin:1rem 0; }
+    summary { font-weight:bold; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>¡Bienvenido a Vim!</h1>
+    <p>Aprende los fundamentos del editor modal más rápido y ligero.</p>
+    <nav>
+      <a href="#basico">Básico</a>
+      <a href="#intermedio">Intermedio</a>
+      <a href="#avanzado">Avanzado</a>
+    </nav>
+  </header>
+
+  <section id="basico">
+    <h2>Nivel 1: Comandos Básicos</h2>
+    <h3>1. ¿Qué es Vim y por qué usarlo?</h3>
+    <p>Vim es un editor de texto modal: su interfaz cambia según el <strong>modo</strong> en el que te encuentres. Cada modo ofrece distintas operaciones, permitiéndote editar con gran velocidad y precisión.</p>
+    <ul>
+      <li><strong>Normal</strong>: Modo por defecto. Navegación, borrado, copia, pegado y comandos de alto nivel.</li>
+      <li><strong>Insert</strong>: Para insertar texto. Ejemplo: al pulsar <code>i</code> pasarás a Insert.</li>
+      <li><strong>Visual</strong>: Para seleccionar texto. Ejemplo: <code>v</code> inicia Visual.</li>
+      <li><strong>Command-line</strong>: Para ejecutar órdenes de Vim, como guardar o buscar. Se accede con <code>:</code>.</li>
+    </ul>
+
+    <h3>2. Cambiar de modo</h3>
+    <ul>
+      <li><code>i</code> &rarr; Insert</li>
+      <li><code>Esc</code> &rarr; Normal (desde Insert o Visual)</li>
+      <li><code>v</code> &rarr; Visual desde Normal</li>
+      <li><code>:</code> &rarr; Command-line desde Normal</li>
+    </ul>
+
+    <h3>3. Tabla de comandos esenciales</h3>
+    <table>
+      <thead>
+        <tr><th>Acción</th><th>Modo</th><th>Comando</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Entrar en Insert</td><td>Normal</td><td><code>i</code></td></tr>
+        <tr><td>Salir a Normal</td><td>Insert/Visual</td><td><code>Esc</code></td></tr>
+        <tr><td>Moverse</td><td>Normal</td><td><code>h</code> (izq), <code>j</code> (abajo), <code>k</code> (arriba), <code>l</code> (der)</td></tr>
+        <tr><td>Guardar</td><td>Command-line</td><td><code>:w</code></td></tr>
+        <tr><td>Salir</td><td>Command-line</td><td><code>:q</code></td></tr>
+        <tr><td>Guardar y salir</td><td>Command-line</td><td><code>:wq</code> o <code>ZZ</code></td></tr>
+        <tr><td>Borrar carácter</td><td>Normal</td><td><code>x</code></td></tr>
+        <tr><td>Deshacer</td><td>Normal</td><td><code>u</code></td></tr>
+        <tr><td>Repetir última acción</td><td>Normal</td><td><code>.</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>4. Ejercicios prácticos</h3>
+    <details>
+      <summary>Ejercicio 1: "Hola Mundo"</summary>
+      <ol>
+        <li>Crea o abre <code>hola.txt</code>: <code>vim hola.txt</code></li>
+        <li>Inserta texto (<code>i</code>) y escribe <code>Hola Mundo</code>.</li>
+        <li>Vuelve a Normal (<code>Esc</code>) y guarda/sal (<code>:wq</code>).</li>
+      </ol>
+      <p><em>Pista:</em> <code>Esc</code> vuelve siempre a Normal.</p>
+    </details>
+
+    <details>
+      <summary>Ejercicio 2: Navegación y borrado</summary>
+      <p>En el archivo anterior, usa <code>h/j/k/l</code> para navegar hasta la palabra "Mundo" y bórrala con <code>x</code>. Prueba a repetirlo varias veces con <code>.</code>.</p>
+    </details>
+
+  </section>
+
+</body>
+</html>
