@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML Day 2025: Aprende Vim - Nivel Básico</title>
+  <title>HTML Day 2025: Aprende Vim - Proyecto Jardín ASCII</title>
   <style>
     /* Reset y tipografía mínima */
     body {
@@ -59,122 +59,72 @@
 
 <body>
   <header>
-    <h1>¡Bienvenido a Vim!</h1>
-    <p>En este primer nivel aprenderás a abrir Vim, comprender sus modos y los comandos básicos de cada uno.</p>
+    <h1>Proyecto: Jardín ASCII en Vim</h1>
+    <p>En este tutorial aprenderás los fundamentos de Vim creando un pequeño jardín en arte ASCII.</p>
     <nav>
-      <a href="#basico">Básico</a>
-      <a href="#intermedio">Intermedio</a>
-      <a href="#avanzado">Avanzado</a>
+      <a href="#paso1">Paso 1</a>
+      <a href="#paso2">Paso 2</a>
+      <a href="#paso3">Paso 3</a>
+      <a href="#paso4">Paso 4</a>
     </nav>
   </header>
 
-  <section id="basico">
-    <h2>Nivel 1: Paso a paso</h2>
-
-    <h3>1. Abrir la terminal y Vim</h3>
-    <p>En tu sistema (Linux/Mac/Windows WSL), abre la terminal y escribe:</p>
-    <pre><code>vim nombre_de_archivo.txt</code></pre>
-    <p>Esto abrirá Vim en modo <strong>Normal</strong>.</p>
-
-    <h3>2. Comprender los modos de Vim</h3>
-    <p>Vim es un editor <em>modal</em>, lo que significa que cambia de comportamiento según el modo en el que estés:</p>
+  <section id="paso1">
+    <h2>Paso 1: Abrir Vim en modo Normal</h2>
+    <p>Abre tu terminal y ejecuta:</p>
+    <pre><code>vim jardin.txt</code></pre>
+    <p>Estás en <strong>Normal</strong>, el modo donde controlas Vim:</p>
     <ul>
-      <li><strong>Normal</strong>: Navegación, borrado y comandos de control.</li>
-      <li><strong>Insert</strong>: Inserción de texto.</li>
-      <li><strong>Visual</strong>: Selección de bloques de texto.</li>
-      <li><strong>Command-line</strong>: Ejecutar órdenes como guardar o buscar.</li>
+      <li>Navegar con <code>h</code>/<code>j</code>/<code>k</code>/<code>l</code></li>
+      <li>Borrar con <code>x</code></li>
+      <li>Deshacer con <code>u</code> y repetir <code>.</code></li>
     </ul>
+  </section>
 
-    <h3>3. Cambiar entre modos</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Acción</th>
-          <th>De</th>
-          <th>A</th>
-          <th>Comando</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Insertar texto</td>
-          <td>Normal</td>
-          <td>Insert</td>
-          <td><code>i</code></td>
-        </tr>
-        <tr>
-          <td>Seleccionar texto</td>
-          <td>Normal</td>
-          <td>Visual</td>
-          <td><code>v</code></td>
-        </tr>
-        <tr>
-          <td>Ejecutar comando</td>
-          <td>Normal</td>
-          <td>Command-line</td>
-          <td><code>:</code></td>
-        </tr>
-        <tr>
-          <td>Volver a Normal</td>
-          <td>Insert/Visual</td>
-          <td>Normal</td>
-          <td><code>Esc</code></td>
-        </tr>
-      </tbody>
-    </table>
+  <section id="paso2">
+    <h2>Paso 2: Entrar en Insert y dibujar tu jardín</h2>
+    <p>Para escribir el arte ASCII, necesitas el modo <strong>Insert</strong>. Desde Normal, pulsa <code>i</code>:</p>
+    <pre><code>i</code></pre>
+    <p>Ahora teclea algo así:</p>
+    <pre><code>   /\
+  /  \
+  \  /
+   \/
+    |
+   / \
+</code></pre>
+    <p>Es un árbol simple. Añade flores (<code>*</code>) o arbustos (<code>#</code>).</p>
+    <p>Cuando termines, vuelve a Normal con <code>Esc</code>.</p>
+  </section>
 
-    <h3>4. Comandos básicos en cada modo</h3>
-    <h4>Normal</h4>
-    <table>
-      <thead>
-        <tr>
-          <th>Acción</th>
-          <th>Comando</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Mover cursor</td>
-          <td><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code></td>
-        </tr>
-        <tr>
-          <td>Borrar carácter</td>
-          <td><code>x</code></td>
-        </tr>
-        <tr>
-          <td>Deshacer</td>
-          <td><code>u</code></td>
-        </tr>
-        <tr>
-          <td>Repetir última acción</td>
-          <td><code>.</code></td>
-        </tr>
-      </tbody>
-    </table>
+  <section id="paso3">
+    <h2>Paso 3: Selección y copia de elementos</h2>
+    <p>Si quieres replicar tu árbol, usa el modo <strong>Visual</strong>:</p>
+    <ol>
+      <li>En Normal, ve al inicio del árbol.</li>
+      <li>Pulsa <code>v</code> para Visual.</li>
+      <li>Mueve el cursor hasta el final del árbol con <code>j</code> y <code>l</code>.</li>
+      <li>Copia con <code>y</code> y pega con <code>p</code> debajo.</li>
+    </ol>
+  </section>
 
-    <h4>Insert</h4>
-    <p>Entra en modo Insert con <code>i</code>. Escribe texto como en cualquier editor. Sal de Insert con
-      <code>Esc</code>.</p>
+  <section id="paso4">
+    <h2>Paso 4: Guardar y comandos rápidos</h2>
+    <p>Para guardar sin salir, desde Normal escribe:</p>
+    <pre><code>:w</code></pre>
+    <p>Para salir y guardar a la vez:</p>
+    <pre><code>:wq</code></pre>
+    <p>También puedes salir sin guardar con <code>:q!</code> si algo sale mal.</p>
 
-    <h4>Visual</h4>
-    <p>Inicia selección con <code>v</code>. Muévete con <code>h/j/k/l</code>. Copia con <code>y</code>, corta con
-      <code>d</code>. Sal de Visual con <code>Esc</code>.</p>
-
-    <h4>Command-line</h4>
-    <p>Entra con <code>:</code>. Guarda con <code>:w</code>, sale con <code>:q</code>, guarda y sale con
-      <code>:wq</code> o <code>ZZ</code>.</p>
-
-    <h3>5. Ejercicio práctico</h3>
     <details>
-      <summary>Crear y editar un archivo</summary>
-      <ol>
-        <li>Abre Vim: <code>vim prueba.txt</code>.</li>
-        <li>Entra en Insert (<code>i</code>) y escribe varias líneas.</li>
-        <li>Sal a Normal (<code>Esc</code>), mueve el cursor y borra una letra (<code>x</code>).</li>
-        <li>Selecciona una palabra en Visual (<code>v</code> + mover), cópiala (<code>y</code>) y pégala
-          (<code>p</code>).</li>
-        <li>Guarda y sal (<code>:wq</code>).</li>
-      </ol>
+      <summary>Ejercicio final: Completa tu jardín</summary>
+      <p>Añade al menos:</p>
+      <ul>
+        <li>Dos árboles o arbustos usando Visual + y.</li>
+        <li>Un camino con <code>-</code> o <code>=</code>.</li>
+        <li>Flores con <code>*</code> alrededor.</li>
+      </ul>
+      <p>Guarda y sal al terminar. ¡Felicidades, tu jardín ASCII en Vim está listo!</p>
     </details>
   </section>
 
