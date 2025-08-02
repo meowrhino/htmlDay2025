@@ -59,8 +59,42 @@
       margin: 1rem 0;
     }
 
+    /* Atajos dropdown */
+    #shortcuts-dropdown {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    #shortcuts-dropdown button {
+      padding: 0.5rem 1rem;
+      cursor: default;
+    }
+
+    #shortcuts-list {
+      display: none;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      width: 200px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
     #shortcuts-dropdown:hover #shortcuts-list {
       display: block;
+    }
+
+    /* Formulario de envío */
+    #envio textarea {
+      width: 100%;
+      font-family: monospace;
+      resize: vertical;
+    }
+
+    #envio button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -94,8 +128,7 @@
   \  /
    \/
     |
-   /  
-</code></pre>
+   /  </code></pre>
       </div>
       <div>
         <p><strong>Instrucciones:</strong></p>
@@ -122,13 +155,11 @@
     <p>Para alinear mejor tu jardín y editar:</p>
     <ul>
       <li>Insertar espacios: en Normal, escribe <code>5i ␣</code> (5 + <code>i</code> + espacio) y luego
-        <code>Esc</code> para añadir 5 espacios.
-      </li>
+        <code>Esc</code> para añadir 5 espacios.</li>
       <div class="tip">
-        <strong>Tip adicional:</strong> Tras pulsar <code>5i</code>, verás que Vim espera cualquier carácter. Al pulsar
-        la barra espaciadora, se insertan los cinco espacios de golpe. ¡Útil para alinear rápidamente bloques de texto!
+        <strong>Tip adicional:</strong> Tras pulsar <code>5i</code>, Vim espera un carácter; al pulsar la barra
+        espaciadora, inserta cinco espacios.</p>
       </div>
-      <code>Esc</code> para añadir 5 espacios.</li>
       <li>Eliminar caracteres: <code>x</code> borra el carácter bajo el cursor.</li>
       <li>Eliminar líneas: <code>dd</code> borra la línea actual.</li>
       <li>Deshacer: <code>u</code>.</li>
@@ -162,23 +193,19 @@
       <p>Añade al menos:</p>
       <ul>
         <li>Tres árboles usando Visual + <code>y</code> + <code>p</code>.</li>
-        <li>Un camino horizontal: usa <code>-</code> o <code>=</code>, y alínealo con espacios (<code>5i </code>).</li>
+        <li>Un camino horizontal: usa <code>-</code> o <code>=</code>, y alínealo con espacios (<code>5i ␣</code>).</li>
         <li>Flores (<code>*</code>) y arbustos (<code>#</code>), con inserción múltiple de espacios.</li>
       </ul>
       <p>¡Intenta crear un banco (<code>[===]</code>) o una mariposa (<code>&lt;~&gt;</code>)!</p>
     </details>
-
   </section>
 
-
   <!-- 📋 Dropdown de Atajos (solo CSS) -->
-  <div id="shortcuts-dropdown" style="position:fixed; bottom:1rem; right:1rem;">
-    <button style="padding:0.5rem 1rem; cursor:default;">Atajos ⌄</button>
-    <div id="shortcuts-list" style="display:none; background:#fff; border:1px solid #ccc;
-              padding:0.5rem; width:200px;
-              box-shadow:0 2px 4px rgba(0,0,0,0.2);">
+  <div id="shortcuts-dropdown">
+    <button>Atajos ⌄</button>
+    <div id="shortcuts-list">
       <strong>Normal</strong>
-      <ul style="margin:0.5rem 0; padding-left:1rem;">
+      <ul>
         <li><code>h/j/k/l</code>: Mover</li>
         <li><code>x</code>: Borrar carácter</li>
         <li><code>dd</code>: Borrar línea</li>
@@ -186,12 +213,12 @@
         <li><code>Ctrl+r</code>: Rehacer</li>
       </ul>
       <strong>Insert</strong>
-      <ul style="margin:0.5rem 0; padding-left:1rem;">
+      <ul>
         <li><code>i</code>: Entrar en Insert</li>
         <li><code>Esc</code>: Volver a Normal</li>
       </ul>
       <strong>Visual</strong>
-      <ul style="margin:0.5rem 0; padding-left:1rem;">
+      <ul>
         <li><code>v</code>: Selección carácter</li>
         <li><code>V</code>: Selección línea</li>
         <li><code>y</code>: Copiar</li>
@@ -201,32 +228,12 @@
     </div>
   </div>
 
-
   <!-- 📬 Formulario de envío de Jardines ASCII -->
-  <section id="envio" style="max-width:800px;margin:2rem auto;padding:1rem;">
+  <section id="envio">
     <h2>Comparte tu Jardín ASCII</h2>
-    <textarea id="garden-input" rows="6" style="width:100%;font-family:monospace;"
-      placeholder="Pega aquí tu jardín ASCII"></textarea>
-    <button id="send-garden" style="margin-top:0.5rem;padding:0.5rem 1rem;">
-      Enviar por Email
-    </button>
+    <textarea rows="6" placeholder="Pega aquí tu jardín ASCII"></textarea>
+    <button>Enviar por Email</button>
   </section>
-
-  <script>
-    // Toggle del listado de atajos
-    document.getElementById('toggle-shortcuts').onclick = function () {
-      var list = document.getElementById('shortcuts-list');
-      list.style.display = list.style.display === 'block' ? 'none' : 'block';
-    };
-    // Envío de jardín via mailto
-    document.getElementById('send-garden').onclick = function () {
-      var content = document.getElementById('garden-input').value;
-      var subject = encodeURIComponent('Mi Jardín ASCII en Vim');
-      var body = encodeURIComponent(content);
-      // Cambia tu-email@ejemplo.com por el destinatario real
-      window.location.href = 'mailto:tu-email@ejemplo.com?subject=' + subject + '&body=' + body;
-    };
-  </script>
 
 </body>
 
