@@ -51,6 +51,17 @@
     .split>div {
       flex: 1;
     }
+
+    .tip {
+      background: #e7f3fe;
+      padding: 0.5rem;
+      border-left: 4px solid #2196F3;
+      margin: 1rem 0;
+    }
+
+    #shortcuts-dropdown:hover #shortcuts-list {
+      display: block;
+    }
   </style>
 </head>
 
@@ -70,12 +81,12 @@
     <h2>Paso 1: ¡Abre Vim!</h2>
     <p>En tu terminal, ejecuta:</p>
     <pre><code>vim jardin.txt</code></pre>
-    <p>Verás una pantalla en blanco. Sin más comandos ni distracciones: este es tu lienzo.</p>
+    <p>Este archivo está vacío; será tu lienzo para construir un jardín ASCII.</p>
   </section>
 
   <section id="paso2">
-    <h2>Paso 2: Entra en modo Insert y dibuja tu primer árbol</h2>
-    <p>Para escribir, cambia a <strong>Insert</strong> con <code>i</code>. Ahora teclearás cada línea del árbol:</p>
+    <h2>Paso 2: Entra en modo <strong>Insert</strong> y dibuja tu primer árbol</h2>
+    <p>Pulsa <code>i</code> para entrar en Insert. Ahora teclearás cada línea del árbol:</p>
     <div class="split">
       <div>
         <pre><code>   /\
@@ -83,7 +94,8 @@
   \  /
    \/
     |
-   / </code></pre>
+   /  
+</code></pre>
       </div>
       <div>
         <p><strong>Instrucciones:</strong></p>
@@ -91,55 +103,130 @@
           <li>Pulsa <code>i</code>.</li>
           <li>Escribe <code>   /\</code> y pulsa <code>Enter</code>.</li>
           <li>Escribe <code>  /  \</code> y <code>Enter</code>.</li>
-          <li>Continúa con <code>  \  /</code>, luego <code>   \/</code>.</li>
-          <li>Agrega el tronco: <code>    |</code> y <code>   /</code>.</li>
-          <li>¡Fíjate en cómo crece tu árbol línea a línea!</li>
+          <li>Escribe <code>  \  /</code> y <code>Enter</code>.</li>
+          <li>Escribe <code>   \/</code> y <code>Enter</code>.</li>
+          <li>Agrega el tronco: escribe <code>    |</code>, <code>Enter</code> y luego <code>   /</code>.</li>
         </ol>
+        <div class="tip">
+          <strong>Tip:</strong>
+          <p><code>\</code> = <em>Alt + º</em> (Mac) // <em>Alt Gr + º</em> (Win)</p>
+          <p><code>/</code> = <em>Shift + 7</em> (Mac & Win)</p>
+        </div>
       </div>
     </div>
     <p>Cuando termines, vuelve a Normal con <code>Esc</code>.</p>
   </section>
 
   <section id="paso3">
-    <h2>Paso 3: Navegación en modo Normal</h2>
-    <p>Ahora que tienes el árbol, muévete por él sin salir de Vim:</p>
+    <h2>Paso 3: Añadir espacios, borrar y navegar</h2>
+    <p>Para alinear mejor tu jardín y editar:</p>
+    <ul>
+      <li>Insertar espacios: en Normal, escribe <code>5i ␣</code> (5 + <code>i</code> + espacio) y luego
+        <code>Esc</code> para añadir 5 espacios.
+      </li>
+      <div class="tip">
+        <strong>Tip adicional:</strong> Tras pulsar <code>5i</code>, verás que Vim espera cualquier carácter. Al pulsar
+        la barra espaciadora, se insertan los cinco espacios de golpe. ¡Útil para alinear rápidamente bloques de texto!
+      </div>
+      <code>Esc</code> para añadir 5 espacios.</li>
+      <li>Eliminar caracteres: <code>x</code> borra el carácter bajo el cursor.</li>
+      <li>Eliminar líneas: <code>dd</code> borra la línea actual.</li>
+      <li>Deshacer: <code>u</code>.</li>
+      <li>Rehacer: <code>Ctrl + r</code>.</li>
+    </ul>
+    <p>Ahora navega con:</p>
     <ul>
       <li><code>h</code>: izquierda</li>
       <li><code>j</code>: abajo</li>
       <li><code>k</code>: arriba</li>
       <li><code>l</code>: derecha</li>
     </ul>
-    <p>Prueba a usar <code>u</code> para deshacer y <code>.</code> para repetir la última acción.</p>
   </section>
 
   <section id="paso4">
     <h2>Paso 4: Selección, copia y guardado</h2>
     <h3>Selección y copia</h3>
     <ol>
-      <li>Posiciónate al inicio del árbol.</li>
-      <li>Pulsa <code>v</code> para iniciar <strong>Visual</strong>.</li>
+      <li>Ve al inicio del árbol.</li>
+      <li>Pulsa <code>v</code> para Visual char (<em>selección de carácter</em>).</li>
       <li>Mueve con <code>j</code>/<code>l</code> hasta el final.</li>
       <li>Copia con <code>y</code>.</li>
       <li>Pega con <code>p</code> donde quieras otro árbol.</li>
     </ol>
 
     <h3>Guardar y salir</h3>
-    <p>Para guardar: desde Normal escribe <code>:w</code> y Enter.</p>
-    <p>Para guardar y salir: <code>:wq</code> y Enter.</p>
-    <p>¿Algo ha salido mal? Sal sin guardar: <code>:q!</code>.</p>
+    <p>Guarda: <code>:w</code>. Guarda y sale: <code>:wq</code>. Fuerza salida sin guardar: <code>:q!</code>.</p>
 
     <details>
       <summary>Ejercicio final: Expande tu jardín</summary>
-      <p>Agrega al menos:</p>
+      <p>Añade al menos:</p>
       <ul>
-        <li>Dos árboles más usando Visual + <code>y</code> + <code>p</code>.</li>
-        <li>Un camino con <code>-</code> y <code>=</code> que conecte los árboles.</li>
-        <li>Flores (<code>*</code>) y arbustos (<code>#</code>) por los laterales.</li>
+        <li>Tres árboles usando Visual + <code>y</code> + <code>p</code>.</li>
+        <li>Un camino horizontal: usa <code>-</code> o <code>=</code>, y alínealo con espacios (<code>5i </code>).</li>
+        <li>Flores (<code>*</code>) y arbustos (<code>#</code>), con inserción múltiple de espacios.</li>
       </ul>
-      <p>¡Hazlo divertido! Prueba a crear una mariposa con <code>><</code> y <code>/\</code>.</p>
+      <p>¡Intenta crear un banco (<code>[===]</code>) o una mariposa (<code>&lt;~&gt;</code>)!</p>
     </details>
 
   </section>
+
+
+  <!-- 📋 Dropdown de Atajos (solo CSS) -->
+  <div id="shortcuts-dropdown" style="position:fixed; bottom:1rem; right:1rem;">
+    <button style="padding:0.5rem 1rem; cursor:default;">Atajos ⌄</button>
+    <div id="shortcuts-list" style="display:none; background:#fff; border:1px solid #ccc;
+              padding:0.5rem; width:200px;
+              box-shadow:0 2px 4px rgba(0,0,0,0.2);">
+      <strong>Normal</strong>
+      <ul style="margin:0.5rem 0; padding-left:1rem;">
+        <li><code>h/j/k/l</code>: Mover</li>
+        <li><code>x</code>: Borrar carácter</li>
+        <li><code>dd</code>: Borrar línea</li>
+        <li><code>u</code>: Deshacer</li>
+        <li><code>Ctrl+r</code>: Rehacer</li>
+      </ul>
+      <strong>Insert</strong>
+      <ul style="margin:0.5rem 0; padding-left:1rem;">
+        <li><code>i</code>: Entrar en Insert</li>
+        <li><code>Esc</code>: Volver a Normal</li>
+      </ul>
+      <strong>Visual</strong>
+      <ul style="margin:0.5rem 0; padding-left:1rem;">
+        <li><code>v</code>: Selección carácter</li>
+        <li><code>V</code>: Selección línea</li>
+        <li><code>y</code>: Copiar</li>
+        <li><code>d</code>: Cortar</li>
+        <li><code>p</code>: Pegar</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- 📬 Formulario de envío de Jardines ASCII -->
+  <section id="envio" style="max-width:800px;margin:2rem auto;padding:1rem;">
+    <h2>Comparte tu Jardín ASCII</h2>
+    <textarea id="garden-input" rows="6" style="width:100%;font-family:monospace;"
+      placeholder="Pega aquí tu jardín ASCII"></textarea>
+    <button id="send-garden" style="margin-top:0.5rem;padding:0.5rem 1rem;">
+      Enviar por Email
+    </button>
+  </section>
+
+  <script>
+    // Toggle del listado de atajos
+    document.getElementById('toggle-shortcuts').onclick = function () {
+      var list = document.getElementById('shortcuts-list');
+      list.style.display = list.style.display === 'block' ? 'none' : 'block';
+    };
+    // Envío de jardín via mailto
+    document.getElementById('send-garden').onclick = function () {
+      var content = document.getElementById('garden-input').value;
+      var subject = encodeURIComponent('Mi Jardín ASCII en Vim');
+      var body = encodeURIComponent(content);
+      // Cambia tu-email@ejemplo.com por el destinatario real
+      window.location.href = 'mailto:tu-email@ejemplo.com?subject=' + subject + '&body=' + body;
+    };
+  </script>
 
 </body>
 
